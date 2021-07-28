@@ -48,7 +48,7 @@ class detect_drowsy:
 		# blink and then a second constant for the number of consecutive
 		# frames the eye must be below the threshold for to set off the
 		# alarm
-		EYE_AR_THRESH = 0.2
+		EYE_AR_THRESH = 0.25
 		EYE_AR_CONSEC_FRAMES = 48
 		# initialize the frame counter as well as a boolean used to
 		# indicate if the alarm is going off

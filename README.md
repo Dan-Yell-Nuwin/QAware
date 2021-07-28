@@ -13,3 +13,5 @@ notes from Allan:
 
 	see how I call them from line 60 - 77
 	Feel free to change these design choices :)
+
+`python detect_drowsiness.py --shape-predictor shape_predictor_68_face_landmarks.dat --alarm alarm.wav`

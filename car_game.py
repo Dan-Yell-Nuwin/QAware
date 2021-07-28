@@ -1,7 +1,11 @@
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame, sys
+import cv2
 from math import *
 from pygame.locals import *
 from enum import Enum
+from detect_drowsiness import detect_drowsy
 
 # game code modified from
 # https://www.pygame.org/project/5051
@@ -58,7 +62,7 @@ class CarGame:
         self.car_y = 320
         self.state = state.DRIVE
 
-        # self.eye_detector = SleepDetector()
+        self.eye_detector = detect_drowsy()
         self.threshold = 3
 
 
@@ -66,19 +70,12 @@ class CarGame:
         while True:
             self.clock.tick(30)
 
-
-            # self.eye_detector.detect()
-
             # # set states:
-            # if self.state == state.DRIVE and self.eye_detector.get_eye_closed_time() > self.threshold:
-            #     self.state = state.PULL_OVER
+            if self.state == state.DRIVE and self.eye_detector.is_drowsy():
+                self.state = state.PULL_OVER
 
-            # f self.state == state.STOP and self.eye_detector.get_eye_closed_time() < self.threshold:
-            #     self.state = state.MERGE_BACK
-
-
-            
-            
+            if self.state == state.STOP and not self.eye_detector.is_drowsy():
+                self.state = state.MERGE_BACK
 
             if self.state == state.DRIVE:
                 self.player_pos[1] += self.y_move
@@ -95,7 +92,7 @@ class CarGame:
                     self.state = state.STOP
             
             elif self.state == state.STOP:
-                self.state = state.MERGE_BACK
+                pass
 
             elif self.state == state.MERGE_BACK:
                 self.player_pos[1] += self.y_move / 2
@@ -105,7 +102,6 @@ class CarGame:
                     self.car_y += 1
                 if self.car_x == 240 and self.car_y == 320:
                     self.state = state.DRIVE
-
 
             wall_bottom = self.h
             while wall_bottom > self.plane_center_y + 10:
@@ -126,14 +122,13 @@ class CarGame:
             self.screen.blit(self.q_cloud, (20,20))
             self.screen.blit(self.team_cloud, (500,40))
             
-            pygame.display.flip()
-            self.screen.fill(BLUE)
+
 
             for event in pygame.event.get():
                 if event.type == QUIT:
                     pygame.quit()
                     sys.exit()
-
-
-game = CarGame()
-game.run()
+            
+            pygame.display.flip()
+            self.screen.fill(BLUE)
+                    

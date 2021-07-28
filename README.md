@@ -1,8 +1,7 @@
 # QAware
-Visualization for awareness on sleepy drivers.
+An Active Drowsy Driving Prevention System
 
-
-To run this game, please run python3 main.py
+To run the demo, clone this repo and run `python3 main.py`
 
 # Description
 

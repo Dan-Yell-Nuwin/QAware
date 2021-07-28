@@ -79,15 +79,20 @@ class CarGame:
 
             if self.state == state.DRIVE:
                 self.player_pos[1] += self.y_move
-                self.car_x = 240
-                self.car_y = 320
+                keys=pygame.key.get_pressed()
+                if keys[K_LEFT] and self.car_x > 100:
+                    self.car_x -= 10
+                if keys[K_RIGHT] and self.car_x < 400:
+                    self.car_x += 10
+                    # self.car_x = 240
+                    # self.car_y = 320
             
             elif self.state == state.PULL_OVER:
                 self.player_pos[1] += self.y_move / 4
                 if self.car_x != 500:
-                    self.car_x += 1
+                    self.car_x += 5
                 if self.car_y != 270:
-                    self.car_y -= 1
+                    self.car_y -= 5
                 if self.car_x == 500 and self.car_y == 270:
                     self.state = state.STOP
             

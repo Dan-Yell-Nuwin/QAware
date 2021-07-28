@@ -10,4 +10,4 @@ This project QAware is an AI/ML recognition simulation software to detect sleepy
 
 By Shulun, Momen, and Daniel
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sFfkbDG4CC0&ab_channel=AllanSun/0.jpg)](https://www.youtube.com/watch?v=sFfkbDG4CC0&ab_channel=AllanSun)
+[![Link to Youtube Video](https://img.youtube.com/vi/sFfkbDG4CC0&ab_channel=AllanSun/0.jpg)](https://www.youtube.com/watch?v=sFfkbDG4CC0&ab_channel=AllanSun)

@@ -1,6 +1,18 @@
 # QAware
 An Active Drowsy Driving Prevention System
 
+
+
+
+# Usage and requirements
+```
+python 3.7+
+pygame
+scipy
+imutils
+dlib
+opencv-python
+```
 To run the demo, clone this repo and run `python3 main.py`
 
 # Description

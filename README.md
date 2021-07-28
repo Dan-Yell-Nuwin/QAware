@@ -2,7 +2,7 @@
 Visualization for awareness on sleepy drivers.
 
 
-To run this game, please run python3 main.py
+To run this game, please run `python3 main.py`
 
 # Description
 

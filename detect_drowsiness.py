@@ -37,6 +37,7 @@ class detect_drowsy:
 		self.lock = Lock()
 		t = Thread(target=self.detection)
 		t.start()
+		time.sleep(5)
 	
 	def is_drowsy(self):
 		self.lock.acquire()

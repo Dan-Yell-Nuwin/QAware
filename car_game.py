@@ -27,22 +27,22 @@ class CarGame:
         pygame.display.set_caption("QAware")
         self.plane_center_x = self.w / 2
 
-        self.stripe = pygame.image.load("stripes.png").convert()
+        self.stripe = pygame.image.load("game_asset/stripes.png").convert()
         self.stripe = pygame.transform.scale(self.stripe, (self.w, self.stripe.get_height()))
 
-        self.road = pygame.image.load("road.png").convert()
+        self.road = pygame.image.load("game_asset/road.png").convert()
         self.road_width = self.road.get_width()
         self.road_height = self.road.get_height()
 
-        self.player_car = pygame.image.load("car.png").convert_alpha()
+        self.player_car = pygame.image.load("game_asset/car.png").convert_alpha()
         self.player_car = pygame.transform.scale(self.player_car, (160, 82))
 
-        self.q_cloud = pygame.image.load("qcloud.png").convert_alpha()
+        self.q_cloud = pygame.image.load("game_asset/qcloud.png").convert_alpha()
         self.q_cloud.set_colorkey(WHITE)
         self.q_cloud = pygame.transform.scale(self.q_cloud, (100, 100))
         self.q_cloud.set_alpha(200)
 
-        self.team_cloud = pygame.image.load("team.png").convert_alpha()
+        self.team_cloud = pygame.image.load("game_asset/team.png").convert_alpha()
         self.team_cloud.set_colorkey(WHITE)
         self.team_cloud = pygame.transform.scale(self.team_cloud, (100, 100))
         self.team_cloud.set_alpha(200)
